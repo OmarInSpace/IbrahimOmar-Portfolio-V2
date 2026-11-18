@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Ibrahim Omar</title>
+    <meta
+      name="description"
+      content="Portfolio Ibrahim Omar, front-end developer dan desainer UI/UX."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <noscript
+      ><style>
+        .pre {
+          display: none !important;
+        }
+        .sw {
+          opacity: 1 !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body>
+    <div class="pre" id="pre" aria-hidden="true">
+      <div class="pre-top">
+        <span>Ibrahim Omar</span><span>Portfolio 2026</span>
+      </div>
+      <div class="pre-count" id="cnt">000</div>
+    </div>
+    <div class="cur" id="cur" aria-hidden="true"><span>open</span></div>
+    <div class="prog" aria-hidden="true"><i></i><span id="progN">00</span></div>
+    <div class="curtain" id="curtain" hidden aria-hidden="true">
+      <span class="disp">page<br />rahasia</span>
+    </div>
+    <div class="codebox" id="codebox" hidden>
+      <form class="code-card" id="codeForm" autocomplete="off">
+        <h3>secret code</h3>
+        <p>Write the secret code to unlock the hidden page.</p>
+        <input
+          id="codeIn"
+          type="text"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+          aria-label="Kode rahasia"
+          placeholder="••••••••"
+        />
+        <div class="code-msg" id="codeMsg" role="status"></div>
+        <div class="code-row">
+          <button class="btn" type="submit">Buka</button
+          ><button type="button" id="codeX">Batal</button>
+        </div>
+      </form>
+    </div>
+    <div
+      class="vault"
+      id="vault"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Page rahasia"
+    >
+      <div class="v-in">
+        <header class="v-top">
+          <span>Page rahasia · Ibrahim Omar</span
+          ><button type="button" id="vClose">Kembali ↩</button>
+        </header>
+        <h2 class="v-title disp">kenangan<span>masa kecil</span></h2>
+        <p class="v-lead">
+          Foto dan video yang bikin saya ingat dari mana semuanya dimulai.
+        </p>
+        <div class="v-bar">
+          <label class="btn" for="vFile">+ Tambah foto / video</label>
+          <input
+            id="vFile"
+            type="file"
+            accept="image/*,video/*"
+            multiple
+            hidden
+          />
+          <span id="vNote"></span>
+        </div>
+        <div class="v-grid" id="vGrid"></div>
+      </div>
+    </div>
+
+    <header class="nav" id="nav">
+      <a
+        class="logo"
+        href="#home"
+        data-go="home"
+        aria-label="Ibrahim Omar, ke atas"
+        >IO</a
+      >
+      <a class="l on" href="#home" data-go="home">Home</a>
+      <a class="l" href="#about" data-go="about">About</a>
+      <a class="l" href="#projects" data-go="projects">Projects</a>
+      <a class="l" href="#contact" data-go="contact">Contact</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="wrap">
+          <div class="hero-main">
+            <p class="script" id="hello">hello, its</p>
+            <h1 class="name disp" aria-label="Ibrahim Omar">
+              <span class="line l1" aria-hidden="true" data-chars>Ibrahim</span>
+              <span class="line l2" aria-hidden="true" data-chars>Omar</span>
+            </h1>
+            <figure class="hero-pic" id="heroPic" data-tilt>
+              <div class="blob"></div>
+              <div class="disc"></div>
+              <div class="tilt">
+                <img
+                  class="cut"
+                  src="assets/foto.webp"
+                  width="560"
+                  height="671"
+                  alt="Foto Ibrahim Omar"
+                />
+              </div>
+              <div class="badge" aria-hidden="true">
+                <svg viewBox="0 0 130 130">
+                  <defs>
+                    <path
+                      id="circ"
+                      d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"
+                    />
+                  </defs>
+                  <text>
+                    <textPath
+                      href="#circ"
+                      textLength="311"
+                      lengthAdjust="spacing"
+                    >
+                      FRONT-END • UI/UX • TAILWIND • JAVASCRIPT •
+                    </textPath>
+                  </text>
+                </svg>
+                <b>↓</b>
+              </div>
+            </figure>
+            <div class="hero-foot">
+              <p>
+                Front-end developer and UI/UX designer. I create clean and
+                smooth web experiences.
+              </p>
+              <a class="cue" href="#about" data-go="about">scroll <i></i></a>
+            </div>
+            <div class="stk stk-pill" aria-hidden="true">
+              <i></i>Available for work
+            </div>
+            <div class="stk stk-clock" aria-hidden="true">
+              <small>Jakarta · WIB</small><b id="clock">--:--:--</b>
+            </div>
+            <!-- <svg
+              class="stk stk-star"
+              viewBox="-100 -100 200 200"
+              aria-hidden="true"
+            >
+              <polygon
+                points="0.0,-96.0 12.5,-79.0 29.7,-91.3 36.3,-71.3 56.4,-77.7 56.6,-56.6 77.7,-56.4 71.3,-36.3 91.3,-29.7 79.0,-12.5 96.0,0.0 79.0,12.5 91.3,29.7 71.3,36.3 77.7,56.4 56.6,56.6 56.4,77.7 36.3,71.3 29.7,91.3 12.5,79.0 0.0,96.0 -12.5,79.0 -29.7,91.3 -36.3,71.3 -56.4,77.7 -56.6,56.6 -77.7,56.4 -71.3,36.3 -91.3,29.7 -79.0,12.5 -96.0,0.0 -79.0,-12.5 -91.3,-29.7 -71.3,-36.3 -77.7,-56.4 -56.6,-56.6 -56.4,-77.7 -36.3,-71.3 -29.7,-91.3 -12.5,-79.0"
+                fill="#FFC61A"
+                stroke="#24170F"
+                stroke-width="3"
+                stroke-linejoin="round"
+              />
+            </svg> -->
+          </div>
+          <dl class="hero-meta">
+            <div>
+              <dt>Berbasis di</dt>
+              <dd>Indonesia</dd>
+            </div>
+            <div>
+              <dt>Fokus</dt>
+              <dd id="roleWord">Front-end</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Terbuka untuk proyek</dd>
+            </div>
+            <div>
+              <dt>Scroll</dt>
+              <dd>Turun untuk lanjut ↓</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div
+          class="mq-track disp"
+          data-words="Front-end,UI / UX,Tailwind,JavaScript"
+          data-dir="1"
+          data-outline="1"
+        ></div>
+      </div>
+
+      <section class="about" id="about">
+        <div class="wrap">
+          <h2 class="sec-title disp">about</h2>
+          <p class="statement" id="statement">
+            I design and build websites that are clean, fast, and user-friendly
+            from the initial sketch till the final line of code.
+          </p>
+          <div class="about-cols">
+            <div class="txt fade">
+              <!-- Ganti dua paragraf ini dengan cerita Anda sendiri -->
+              <p>
+                Saya seorang front-end developer dan desainer UI/UX yang sedang
+                menuntut ilmu di sekolah abudzar. Saya suka membuat
+                web yang mulus, cepat, dan ramah untuk pengguna dari awal
+                hingga baris kode terakhir.
+              </p>
+              <p>
+                Saya mengerjakan projek menggunakan HTML, Tailwind CSS, dan JavaScript. Setiap
+                proyek saya mulai dari pertanyaan yang sama: "apa yang perlu
+                dilakukan pengunjung di halaman ini?"
+              </p>
+            </div>
+            <dl class="facts fade">
+              <div>
+                <dt>Fokus</dt>
+                <dd>Front-end &amp; UI/UX</dd>
+              </div>
+              <div>
+                <dt>Alat</dt>
+                <dd>HTML, Tailwind, JavaScript</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd>Terbuka untuk proyek baru</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="wrap">
+          <h2 class="sk-giant disp">skills</h2>
+          <div class="sk-stage">
+            <div class="cards left">
+              <!-- data-v = persentase kemampuan (0-100). Ubah angkanya, batang ikut menyesuaikan -->
+              <article class="card" data-v="80">
+                <div class="c-top">
+                  <span class="c-tag">Framework</span
+                  ><span class="c-pct"
+                    ><b class="num">80</b><small>%</small></span
+                  >
+                </div>
+                <h3 class="c-name">Tailwind</h3>
+                <div class="segs" aria-hidden="true"></div>
+              </article>
+              <article class="card" data-v="85">
+                <div class="c-top">
+                  <span class="c-tag">Markup</span
+                  ><span class="c-pct"
+                    ><b class="num">85</b><small>%</small></span
+                  >
+                </div>
+                <h3 class="c-name">HTML</h3>
+                <div class="segs" aria-hidden="true"></div>
+              </article>
+              <article class="card" data-v="75">
+                <div class="c-top">
+                  <span class="c-tag">Bahasa</span
+                  ><span class="c-pct"
+                    ><b class="num">75</b><small>%</small></span
+                  >
+                </div>
+                <h3 class="c-name">JavaScript</h3>
+                <div class="segs" aria-hidden="true"></div>
+              </article>
+            </div>
+            <div class="sk-center" data-tilt>
+              <div class="star" aria-hidden="true">
+                <svg viewBox="-100 -100 200 200">
+                  <polygon
+                    points="0.0,-96.0 12.5,-79.0 29.7,-91.3 36.3,-71.3 56.4,-77.7 56.6,-56.6 77.7,-56.4 71.3,-36.3 91.3,-29.7 79.0,-12.5 96.0,0.0 79.0,12.5 91.3,29.7 71.3,36.3 77.7,56.4 56.6,56.6 56.4,77.7 36.3,71.3 29.7,91.3 12.5,79.0 0.0,96.0 -12.5,79.0 -29.7,91.3 -36.3,71.3 -56.4,77.7 -56.6,56.6 -77.7,56.4 -71.3,36.3 -91.3,29.7 -79.0,12.5 -96.0,0.0 -79.0,-12.5 -91.3,-29.7 -71.3,-36.3 -77.7,-56.4 -56.6,-56.6 -56.4,-77.7 -36.3,-71.3 -29.7,-91.3 -12.5,-79.0"
+                    fill="#FFC61A"
+                    stroke="#24170F"
+                    stroke-width="1.1"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="tilt">
+                <img
+                  class="cut"
+                  src="assets/foto.webp"
+                  width="560"
+                  height="671"
+                  alt="Foto Ibrahim Omar"
+                />
+              </div>
+              <div class="note" aria-hidden="true">
+                <span>this is me!</span
+                ><svg viewBox="0 0 54 50">
+                  <path d="M46 3C46 24 32 40 8 44" />
+                  <path d="M19 33L7 44L22 48" />
+                </svg>
+              </div>
+            </div>
+            <div class="cards right">
+              <article class="card" data-v="80">
+                <div class="c-top">
+                  <span class="c-tag">Desain</span
+                  ><span class="c-pct"
+                    ><b class="num">80</b><small>%</small></span
+                  >
+                </div>
+                <h3 class="c-name">UI / UX</h3>
+                <div class="segs" aria-hidden="true"></div>
+              </article>
+              <article class="card" data-v="85">
+                <div class="c-top">
+                  <span class="c-tag">Gerak</span
+                  ><span class="c-pct"
+                    ><b class="num">85</b><small>%</small></span
+                  >
+                </div>
+                <h3 class="c-name">CSS Animation</h3>
+                <div class="segs" aria-hidden="true"></div>
+              </article>
+              <article class="card" data-v="70">
+                <div class="c-top">
+                  <span class="c-tag">Alur kerja</span
+                  ><span class="c-pct"
+                    ><b class="num">70</b><small>%</small></span
+                  >
+                </div>
+                <h3 class="c-name">Git</h3>
+                <div class="segs" aria-hidden="true"></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="wrap">
+          <h2 class="sec-title disp">projects</h2>
+          <div class="rows">
+            <!-- Contoh proyek. Ganti judul, kategori, tahun, dan href dengan proyek asli Anda -->
+            <a
+              class="row"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              data-cur="view"
+              ><h3 class="disp">Warung Digital</h3>
+              <span class="cat">Website · Tailwind</span
+              ><span class="yr">2026</span></a
+            >
+            <a
+              class="row"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              data-cur="view"
+              ><h3 class="disp">Catatan Harian</h3>
+              <span class="cat">Web App · JavaScript</span
+              ><span class="yr">2026</span></a
+            >
+            <a
+              class="row"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              data-cur="view"
+              ><h3 class="disp">Cuaca Kita</h3>
+              <span class="cat">UI / UX · Konsep</span
+              ><span class="yr">2025</span></a
+            >
+            <a
+              class="row"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              data-cur="view"
+              ><h3 class="disp">Invictus</h3>
+              <span class="cat">Website · Angkatan</span
+              ><span class="yr">2026</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="peek" id="peek" aria-hidden="true">
+        <div class="art a1"><b>WD</b><i></i></div>
+        <div class="art a2"><i></i><b>CH</b></div>
+        <div class="art a3"><b>CK</b><i></i></div>
+        <div class="art a4"><i></i><b>IVCS</b></div>
+      </div>
+
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <h2 aria-label="let's make something good">
+            <span class="big-line disp" aria-hidden="true">let's make</span>
+            <span class="big-line disp outline" aria-hidden="true"
+              >Something</span
+            >
+            <span class="big-line disp am" aria-hidden="true">good.</span>
+          </h2>
+          <p class="lead fade">
+            Punya proyek, ide, atau sekadar ingin menyapa? Kirim pesan, saya akan
+            balas secepatnya.
+          </p>
+          <div class="mail fade">
+            <!-- Ganti dengan email Anda -->
+            <span class="mail-addr" id="mailAddr">ibamboo999@gmail.com</span>
+            <button class="btn mag" id="copy" type="button" data-cur="1">
+              Salin email
+            </button>
+          </div>
+          <nav class="socials fade" aria-label="Media sosial">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+              >Instagram ↗</a
+            >
+            <a href="https://github.com/" target="_blank" rel="noopener"
+              >GitHub ↗</a
+            >
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener"
+              >LinkedIn ↗</a
+            >
+          </nav>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div
+            class="mq-track disp"
+            data-words="Ibrahim Omar,Portfolio 2026,Terima kasih"
+            data-dir="-1"
+            data-outline="1"
+          ></div>
+        </div>
+        <div class="wrap">
+          <div class="foot">
+            <span>Portfolio © 2026 Ibrahim Omar</span>
+            <!-- <span
+              >Huruf: Bricolage Grotesque, Instrument Serif, DM Mono. Dibuat
+              dengan HTML, CSS, dan JavaScript.</span
+            > -->
+            <button type="button" data-go="home" data-cur="1">
+              Kembali ke atas ↑
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/secret.js"></script>
+  </body>
+</html>
