@@ -1,4 +1,4 @@
-/* Animasi utama: loader, hero, scroll, skills, projects, kursor. Perlu GSAP + ScrollTrigger (dimuat di index.html). */
+
 (function(){
   var doc=document.documentElement;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,14 +57,14 @@
   buildMarquees();
   buildSegments();
 
-  /* jam Jakarta dan kata fokus yang bergantian */
+  /* jam: jakarta */
   var clockEl=$('#clock');
   function tick(){try{clockEl.textContent=new Date().toLocaleTimeString('id-ID',{timeZone:'Asia/Jakarta',hour12:false}).replace(/\./g,':');}catch(e){}}
   tick(); setInterval(tick,1000);
   var roles=['Front-end','UI / UX','Tailwind','JavaScript'], ri=0, rw=$('#roleWord');
   if(!reduce) setInterval(function(){rw.style.opacity=0;setTimeout(function(){ri=(ri+1)%roles.length;rw.textContent=roles[ri];rw.style.opacity=1;},300);},2400);
 
-  /* fallback: no GSAP (blocked) or reduced motion */
+  
   if(!window.gsap||!window.ScrollTrigger||reduce){
     doc.classList.add('no-motion');
     finishLoad();
@@ -76,7 +76,7 @@
   doc.classList.add('lock');
   gsap.registerPlugin(ScrollTrigger);
 
-  /* split text */
+  
   var heroChars=[]; $$('[data-chars]').forEach(function(l){heroChars=heroChars.concat(splitChars(l));});
   $$('.sec-title,.sk-giant').forEach(function(t){t.setAttribute('aria-label',t.textContent); splitWords(t,true).forEach(function(n){n.setAttribute('aria-hidden','true')});});
   var statement=$('#statement'); statement.setAttribute('aria-label',statement.textContent);
@@ -110,7 +110,7 @@
     .to('#nav',{yPercent:0,duration:.9,ease:'power4.out'},'-=1');
   setTimeout(function(){ if(pre&&pre.style.display!=='none'){ finishLoad(); intro.progress(1); } },8000);
 
-  /* hero scroll: dua baris nama bergeser berlawanan, foto membesar dan miring, stiker melayang beda kecepatan */
+  
   var hs=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:.6}});
   hs.to('.name .l1',{x:'-4vw'},0)
     .to('.name .l2',{x:'16vw'},0)
@@ -119,14 +119,14 @@
     .to('.stk-pill',{y:-110},0)
     .to('.stk-clock',{y:-50},0);
 
-  /* progres scroll di tepi kanan */
+  /* progres scroll */
   var progBar=$('.prog i'), progN=$('#progN');
   ScrollTrigger.create({start:0,end:'max',onUpdate:function(s){
     progBar.style.transform='scaleY('+s.progress+')';
     progN.textContent=String(Math.round(s.progress*100)).padStart(2,'0');
   }});
 
-  /* marquees follow the scroll */
+  
   var mqs=$$('.mq-track').map(function(tr){
     var dir=+tr.dataset.dir;
     return gsap.fromTo(tr,{xPercent:dir>0?0:-50},{xPercent:dir>0?-50:0,duration:26,ease:'none',repeat:-1});
@@ -139,7 +139,7 @@
     back=gsap.to(mqs,{timeScale:function(){return self.direction;},duration:.9,ease:'power2.out',delay:.1});
   }});
 
-  /* titles, statement, fades */
+  
   $$('.sec-title').forEach(function(t){
     gsap.from($$('.wi',t),{yPercent:115,duration:1.1,ease:'power4.out',stagger:.08,scrollTrigger:{trigger:t,start:'top 88%',once:true}});
   });
@@ -151,7 +151,7 @@
     gsap.from(el,{y:44,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}});
   });
 
-  /* skills stage */
+  /* skills */
   var giant=$('.sk-giant');
   gsap.from($$('.wi',giant),{yPercent:110,duration:1.2,ease:'power4.out',stagger:.08,scrollTrigger:{trigger:giant,start:'top 85%',once:true}});
   gsap.fromTo(giant,{xPercent:5},{xPercent:-5,ease:'none',scrollTrigger:{trigger:'.skills',start:'top bottom',end:'bottom top',scrub:true}});
@@ -170,7 +170,7 @@
     gsap.to(o,{n:v,duration:1.4,delay:.2,ease:'power3.out',scrollTrigger:st,onStart:function(){num.textContent='0';},onUpdate:function(){num.textContent=Math.round(o.n);}});
   });
 
-  /* mouse tilt for portraits */
+  /* mouse */
   $$('[data-tilt]').forEach(function(box){
     var t=$('.tilt',box); gsap.set(t,{transformPerspective:900});
     var rx=gsap.quickTo(t,'rotationY',{duration:.6,ease:'power3'}), ry=gsap.quickTo(t,'rotationX',{duration:.6,ease:'power3'});
@@ -181,7 +181,7 @@
     box.addEventListener('mouseleave',function(){rx(0);ry(0);});
   });
 
-  /* project preview that follows the cursor */
+ /* project */
   var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
   var rows=$$('.row'), peek=$('#peek'), arts=$$('.art',peek);
   rows.forEach(function(r,i){var m=document.createElement('div'); m.className='art-m'; m.appendChild(arts[i].cloneNode(true)); r.appendChild(m);});
@@ -198,7 +198,7 @@
     });
   }
 
-  /* custom cursor + magnetic buttons */
+  /* custom cursor */
   if(fine){
     var cur=$('#cur'); doc.classList.add('has-cur');
     gsap.set(cur,{xPercent:-50,yPercent:-50});
@@ -219,7 +219,7 @@
     });
   }
 
-  /* nav: smooth jumps, active link, hide while scrolling down */
+  /* nav */
   $$('[data-go]').forEach(function(a){
     a.addEventListener('click',function(e){e.preventDefault();var t=$('#'+a.dataset.go); if(t) t.scrollIntoView({behavior:'smooth'});});
   });

@@ -1,7 +1,4 @@
-/* Ibrahim Omar · Portfolio — semua gaya ada di sini. Warna dan font ada di :root paling atas. */
-/* Layout: sand hero with a condensed giant name and a die-cut portrait on a yellow blob; cocoa marquee;
-   statement that lights up on scroll; royal-blue skills stage with a seal-star behind the portrait and tilted score cards;
-   ruled project list with a cursor-following preview; yellow contact. */
+
 :root {
   --sand: #efe1c1;
   --paper: #fbf3df;
@@ -1005,7 +1002,7 @@ html.has-cur button {
   font: 500 0.78rem/1.5 var(--mono);
 }
 
-/* hero extras: stickers, info strip, scroll progress */
+/* plus */
 .stk {
   position: absolute;
   z-index: 4;

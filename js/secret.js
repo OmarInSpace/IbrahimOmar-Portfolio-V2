@@ -1,6 +1,6 @@
-/* Page rahasia: kode rahasia, tirai transisi, galeri foto/video. Ganti kodenya di SECRET_CODE. */
+/* Page rahasia*/
 (function(){
-  var SECRET_CODE='memory'; /* ganti kode rahasia di sini, tulis huruf kecil */
+  var SECRET_CODE='memory';
   var doc=document.documentElement, g=window.gsap;
   var $=function(s,r){return (r||document).querySelector(s)};
   var vault=$('#vault'), grid=$('#vGrid'), file=$('#vFile'), note=$('#vNote'), curtain=$('#curtain');
@@ -64,7 +64,7 @@
     if(n&&g){var ps=grid.querySelectorAll('.pola'); g.from(Array.prototype.slice.call(ps,-n),{y:60,opacity:0,duration:.7,stagger:.08,ease:'back.out(1.4)'});}
   });
 
-  /* tirai transisi antar halaman */
+  
   function wipe(mid,end){
     if(!g){mid(); if(end) end(); return;}
     busy=true; curtain.hidden=false;
@@ -111,7 +111,7 @@
   box.addEventListener('click',function(e){if(e.target===box) closeCode();});
   $('#vClose').addEventListener('click',closeVault);
 
-  /* ketik kode di mana saja */
+ 
   var buf='';
   document.addEventListener('keydown',function(e){
     var t=e.target;
